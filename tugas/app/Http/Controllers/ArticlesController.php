@@ -21,8 +21,9 @@ class ArticlesController extends Controller
     public function index()
     {
         $articles = $this->model->all();
+        $categories = Category::all();
 
-        return view('article.index', compact('articles'));
+        return view('article.index', compact('articles', 'categories'));
     }
 
     /**
@@ -70,8 +71,9 @@ class ArticlesController extends Controller
     public function edit($id)
     {
         $articles = $this->model->find($id);
+        $categories = Category::all();
 
-        return view('article.edit', compact('articles'));
+        return view('article.edit', compact('articles', 'categories'));
     }
 
     /**

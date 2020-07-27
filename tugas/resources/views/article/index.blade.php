@@ -32,7 +32,7 @@
 				<tr>
 					<td>{{ $article->title }}</td>
 					<td>{{ $article->author }}</td>
-					<td>{{ $article->category_id }}</td>
+					<td>{{ $article->category->name  }}</td>
 					<td>{{ $article->tags }}</td>
 					<td>{{ $article->created_at }}</td>
 					<td>
