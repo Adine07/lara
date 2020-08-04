@@ -18,6 +18,7 @@
 			<th>Alamat</th>
 			<th>Kandung</th>
 			<th>Students</th>
+			<th>Created_at</th>
 			<th>Action</th>
 		</tr>
 	</thead>
@@ -33,6 +34,7 @@
 			<td>{{ $guardian->address }}</td>
 			<td>{{ $guardian->is_parent ? 'Ya' : 'Tidak' }}</td>
 			<td>{{ $guardian->students()->count() }}</td>
+			<td>{{ $guardian->created_at }}</td>
 			<td>
 				<a href="/guardians/edit/{{$guardian->id}}">Edit </a>
 				<form action="/guardians/delete/{{$guardian->id}}" method="post">

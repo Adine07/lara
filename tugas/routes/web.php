@@ -15,10 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/layout', function () {
-    return view('layout.layout');
-});
+// Route::get('/layout', function () {
+//     return view('layout.layout');
+// });
 
 Route::get('/article', 'ArticlesController@index');
 Route::get('/article/show', 'ArticlesController@show');

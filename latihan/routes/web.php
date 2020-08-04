@@ -12,7 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'HomeController@index');
+
+Auth::routes();
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/wow/w_{name}/bio', function ($name = 'adi') {
+    return $name;
+});
 
 Route::get('/guardians', 'GuardianController@index');
 Route::get('/guardians/create', 'GuardianController@create');
@@ -28,8 +34,12 @@ Route::get('/students/edit/{id}', 'StudentController@edit');
 Route::put('/students/update/{id}', 'StudentController@update');
 Route::delete('/students/delete/{id}', 'StudentController@delete');
 
-Route::get('/login', 'AuthController@login');
-Route::get('/register', 'AuthController@register');
-Route::post('/registration-proccess', 'AuthController@registrationProccess');
-Route::post('/login-proccess', 'AuthController@loginProccess');
-Route::post('/logout', 'AuthController@logout');
+// Route::get('/login', 'AuthController@login');
+// Route::get('/register', 'AuthController@register');
+// Route::post('/registration-proccess', 'AuthController@registrationProccess');
+// Route::post('/login-proccess', 'AuthController@loginProccess');
+// Route::post('/logout', 'AuthController@logout');
+
+Route::get('/loginnew', function () {
+    return view('authentication.login');
+});
